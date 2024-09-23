@@ -1,0 +1,22 @@
+<div>
+  <form action="/players" method="get">
+    <label for="name">Nome</label>
+    <input type="text" name="name" placeholder="Digite o nome do player">
+    <input type="submit" value="Pesquisar">
+  </form>
+</div>
+
+<div>
+  <ul>
+  {{#each players}}
+  <li class="card">
+    <div class="about">
+        <a href="player/{{this.profile_id}}">Perfil: {{this.name}}</a>
+        <img src="https://flagsapi.com/{{uppercase this.country}}/flat/24.png" alt="{{this.country}}">
+    </div>
+  {{else}}
+    <p>Nenhum jogador encontrado.</p>
+  {{/each}}
+  </li>
+  </ul>
+</div>
