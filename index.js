@@ -2,6 +2,7 @@ const express = require('express');
 const { create } = require('express-handlebars'); // Use create para instanciar Handlebars
 const app = express();
 const playerRoutes = require('./routes/playerRoutes');
+const PORT = process.env.PORT || 3000;
 
 // Criar uma instância de handlebars com o método `create`
 const hbs = create({
@@ -22,6 +23,6 @@ app.use(express.json());
 
 app.use('/', playerRoutes);
 
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
